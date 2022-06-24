@@ -1,0 +1,33 @@
+{
+  "name": "user.workflow.7844a826-219b-4bfa-a5aa-bd83c6eacd51",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon -e ts -w ./src -x yarn run build:run",
+    "watch:serve": "### 没用 ts-node -r src/index.ts",
+    "build": "yarn build:compile && yarn build:path",
+    "build:run": "yarn build:compile && yarn build:path && yarn run:index",
+    "build:compile": "tsc --project tsconfig.json",
+    "build:path": "yarn tsconfig-replace-paths -p ./tsconfig.json --src ./dist -o ./dist",
+    "run:index": "node dist/src/index"
+  },
+  "type": "module",
+  "author": "banana",
+  "license": "ISC",
+  "dependencies": {
+    "alfy": "^1.0.0",
+    "json5": "^2.2.1",
+    "urlencode": "^1.1.0",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@types/urlencode": "^1.1.2",
+    "@types/xml2js": "^0.4.11",
+    "nodemon": "^2.0.18",
+    "ts-node": "^10.8.1",
+    "tsconfig-replace-paths": "file:/Users/banana/Library/Application Support/Alfred/Alfred.alfredpreferences/workflows/user.workflow.7844A826-219B-4BFA-A5AA-BD83C6EACD51/compile/tsconfig-replace-paths",
+    "tscpaths": "^0.0.9",
+    "typescript": "^4.7.3"
+  }
+}
